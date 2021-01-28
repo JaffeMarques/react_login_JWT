@@ -1,0 +1,19 @@
+.all {
+    padding-top: 3rem;
+    width: 100%;
+    height: 100vh !important;
+    background: #191622;
+    padding-bottom: 10rem !important;
+}
+
+.login-form {
+    background: #312e3a;
+    border-radius: .3rem;
+    padding: 3rem !important;
+}
+
+.login-title {
+    font-family: nunito;
+    color: #ffffff;
+    font-weight: 700;
+}

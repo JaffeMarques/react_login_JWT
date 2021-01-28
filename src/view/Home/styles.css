@@ -1,0 +1,46 @@
+html{background: #191622 !important;}
+
+.home-form {
+    padding-top: 3rem;
+    width: 100%;
+    background: #191622;
+}
+
+
+.home-result {
+    padding-top: 3rem;
+    width: 100%;
+    background: #191622;
+    padding-bottom: 2rem;
+}
+
+.alert-danger{
+    background: #ff1e00 !important;
+    border: none !important;
+    font-size: 1.2rem;
+    color: white !important;
+
+}
+
+.user{
+    border: .1rem solid #555555;
+    border-radius: .3rem;
+    padding: 1rem .5rem;
+}
+
+.login-form {
+    background: #312e3a;
+    border-radius: .3rem;
+    padding: 3rem !important;
+    color: white !important;
+}
+
+.cad-title {
+    font-family: nunito;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.custom-select{
+    width: 90% !important; 
+}

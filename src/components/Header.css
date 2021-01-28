@@ -1,0 +1,22 @@
+.custom-header {
+    background: #312E3A !important;
+    color: #ffffff;
+}
+
+.menu-title {
+    color: white;
+}
+
+.menu-title:hover {
+    opacity: .9;
+    text-decoration: none;
+    color: #cccccc;
+}
+
+.btn-logout{
+    padding: .2rem;
+}
+
+.btn-item{
+    text-align: right !important;
+}
