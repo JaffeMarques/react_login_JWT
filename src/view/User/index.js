@@ -191,7 +191,7 @@ export default class EditUser extends Component {
             <Header />
                 <div className="all">
                     <div className='login-form col-10 offset-1 col-md-4 offset-md-4'>
-                    <div className="col-12 col-md-12 text-center mb-4">
+                    <div className="col-12 rm-pd col-md-12 text-center mb-4">
                         <h2 className="cad-title text-center mb-2">ATUALIZAR DADOS</h2>
                         <label className="text-white small float-left mb-3">Campos com * são obrigatórios</label>
                             <form onSubmit={this.handleUpdate}>

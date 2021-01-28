@@ -18,3 +18,9 @@
     color: #ffffff;
     font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+    .rm-pd{
+        padding: 0px !important;
+    }
+}

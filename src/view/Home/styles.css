@@ -14,6 +14,13 @@ html{background: #191622 !important;}
     padding-bottom: 2rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .rm-pd{
+        padding: 0px !important;
+    }
+}
+
+
 .alert-danger{
     background: #ff1e00 !important;
     border: none !important;

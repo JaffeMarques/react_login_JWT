@@ -51,7 +51,7 @@ export default function Register() {
                             
                             <label  className="text-white mb-3">Filtros por data de nascimento</label>
                             <div className="row  pl-3">
-                                <select className="custom-select col-3 mr-3"
+                                <select className="custom-select col-md-3 mr-3 col-12"
                                     value={day} 
                                     onChange={ e => setDay(e.target.value) }
                                 >
@@ -88,7 +88,7 @@ export default function Register() {
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select className="custom-select col-3 mr-3"
+                                <select className="custom-select col-md-3 mr-3 col-12"
                                     value={month}
                                     onChange={ e => setMonth(e.target.value) }
                                     >
@@ -106,7 +106,7 @@ export default function Register() {
                                     <option value="11">Nov</option>
                                     <option value="12">Dez</option>
                                 </select>
-                                <input className="col-5" 
+                                <input className="col-md-5 col-12" 
                                     type="text" 
                                     placeholder="Informe o ano" 
                                     value={year} 
@@ -124,10 +124,10 @@ export default function Register() {
             <div className={isHide}>
                 <div className="home-result" >
                     <div className='login-form col-10 offset-1 col-md-4 offset-md-4'>
-                        <section className="col-12">
-                            <h4 className="cad-title text-center mb-4">RESULTADOS CORRESPONDENTES</h4>
+                        <section className="col-12 rm-pd">
+                            <h5 className="cad-title text-center mb-4">RESULTADOS CORRESPONDENTES</h5>
 
-                            <div className="col-12">
+                            <div className="col-12 rm-pd">
                             { results.length > 0 ? results.map((result) => 
                             (
                                 <div className="user row text-left mt-3" key={result.id}>

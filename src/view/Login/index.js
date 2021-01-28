@@ -33,7 +33,7 @@ export default function Login() {
             <Header />
             <div className="all">
                 <div className='login-form col-10 offset-1 col-md-4 offset-md-4'>
-                    <section className="row ">
+                    <section className="row">
                         <form onSubmit={handleLogin} className="col-12">
                             <h3 className="login-text text-center mb-4">Bem vindo de volta</h3>
                             <input className="col-12" type="email" placeholder="Informe seu e-mail" value={email} onChange={ e => setEmail(e.target.value) } />
