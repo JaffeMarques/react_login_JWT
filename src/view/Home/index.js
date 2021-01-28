@@ -107,7 +107,7 @@ export default function Register() {
                                     <option value="12">Dez</option>
                                 </select>
                                 <input className="col-md-5 col-12" 
-                                    type="text" 
+                                    type="number" 
                                     placeholder="Informe o ano" 
                                     value={year} 
                                     onChange={ e => setYear(e.target.value) } />
