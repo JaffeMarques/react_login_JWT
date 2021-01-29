@@ -18,3 +18,8 @@
     color: #ffffff;
     font-weight: 700;
 }
+
+.errorText {
+    color: #ff5858;
+    font-weight: bold;
+}

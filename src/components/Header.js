@@ -19,7 +19,7 @@ export default function Header() {
   }
 
   return (
-      <div class="navbar navbar-dark bg-dark justify-content-between">
+      <div className="navbar navbar-dark bg-dark justify-content-between">
         <Link to="/" className="menu-title navbar-brand">
           <h1>qiōra</h1>
         </Link>

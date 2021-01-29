@@ -18,6 +18,15 @@ export default function Register() {
     const [pet, setPet] = useState('');
     const [born_date, setBornDate] = useState('');
 
+    //warning states
+    const [nameError, setNameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const [passwordbError, setPasswordbError] = useState('');
+    const [careerError, setCareerError] = useState('');
+    const [cpfError, setCpfError] = useState('');
+    const [bornError, setBornError] = useState('');
+
     const history = useHistory();
 
     function validateCpf(v){
@@ -57,16 +66,49 @@ export default function Register() {
                     history.push('/');
                 }
             }).catch(function (error) {
-                console.log(error);
-                if (error.response.status == 400) {
-                    setIsHide(null);
-                    let temp;
-                    if(error.response.data.errors !== undefined) {   
-                        temp = Object.values(error.response.data.errors)
-                        setWarningMessage(temp[0]);
-                        return;
-                    }
-                    setWarningMessage(error.response.data.message);
+                setNameError('');
+                setEmailError('');
+                setPasswordError('');
+                setPasswordbError('');
+                setCareerError('');
+                setBornError('');
+                setCpfError('');
+
+
+                console.log(error.response);
+                let generalError = '';
+                if(error.response.data.errors){
+                    if(error.response.data.errors.name) setNameError(error.response.data.errors.name);
+                    if(error.response.data.errors.email) setEmailError(error.response.data.errors.email);
+                    if(error.response.data.errors.password) setPasswordError(error.response.data.errors.password);
+                    if(error.response.data.errors.passwordb) setPasswordbError(error.response.data.errors.passwordb);
+                    if(error.response.data.errors.career) setCareerError(error.response.data.errors.career);
+                    if(error.response.data.errors.born_date) setBornError(error.response.data.errors.born_date);
+                    if(error.response.data.errors.cpf) setCpfError(error.response.data.errors.cpf);
+                }
+
+                if(error.response.data.message){
+                    if(error.response.data.message.name) setNameError(error.response.data.message.name);
+                    if(error.response.data.message.email) setEmailError(error.response.data.message.email);
+                    if(error.response.data.message.pass1) setPasswordError(error.response.data.message.pass1);
+                    if(error.response.data.message.pass2) setPasswordbError(error.response.data.message.pass2);
+                    if(error.response.data.message.career) setCareerError(error.response.data.message.career);
+                    if(error.response.data.message.date) setBornError(error.response.data.message.date);
+                    if(error.response.data.message.cpf) setCpfError(error.response.data.message.cpf);
+                    if(error.response.data.message.year) generalError = error.response.data.message.year;
+                }
+
+                setIsHide(null);
+                let temp;
+                if(error.response.data.errors) {   
+                    temp = error.response.data.msg;
+                    setWarningMessage(temp);
+                    return 0;
+                }
+                if(error.response.data.message) {   
+                    temp = "Verifique os campos e tente novamente"
+                    setWarningMessage(temp);
+                    return 0;
                 }
             });
         } catch(error) {
@@ -95,36 +137,42 @@ export default function Register() {
                         <div className="col-12 col-md-6">
                             <label className="text-white float-right mb-3">Campos com * são obrigatórios</label>
                             <form onSubmit={handleRegister}>
+                                <span className="small errorText">{nameError}</span>
                                 <input className="col-12" 
                                     type="text" 
                                     placeholder="Seu nome *" 
                                     value={name} 
                                     onChange={ e => setName(capitalize(e.target.value)) } />
 
+                                <span className="small errorText">{emailError}</span>
                                 <input className="col-12" 
                                     type="email" 
                                     placeholder="Seu melhor email*" 
                                     value={email} 
                                     onChange={ e => setEmail(e.target.value) } />
 
+                                <span className="small errorText">{passwordError}</span>
                                 <input className="col-12" 
                                     type="password" 
                                     placeholder="Digite sua senha*" 
                                     value={password} 
                                     onChange={ e => setPassword(e.target.value) }/>
 
+                                <span className="small errorText">{passwordbError}</span>
                                 <input className="col-12" 
                                     type="password" 
                                     placeholder="Digite a senha novamente*" 
                                     value={passwordb} 
                                     onChange={ e => setPasswordb(e.target.value) }/>
 
+                                <span className="small errorText">{careerError}</span>
                                 <input className="col-12" 
                                     type="text" 
                                     placeholder="Sua profissão*" 
                                     value={career} 
                                     onChange={ e => setCareer(capitalize(e.target.value)) } />
 
+                                <span className="small errorText">{cpfError}</span>
                                 <input className="col-12" 
                                     type="text" 
                                     placeholder="Seu CPF*" 
@@ -137,7 +185,9 @@ export default function Register() {
                                     placeholder="Qual é o seu animal de estimação?" 
                                     value={pet} 
                                     onChange={ e => setPet(capitalize(e.target.value)) } />
-                                <label className="text-white;">Data de nascimento*</label>
+
+                                <label className="text-white;">Data de nascimento*</label><br></br>
+                                <span className="small errorText">{bornError}</span>
                                 <input className="col-12" 
                                     type="date"
                                     selected={born_date} 
