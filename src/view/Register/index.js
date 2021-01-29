@@ -58,6 +58,7 @@ export default function Register() {
         
         try {
             api.post('api/register', data).then(async (res) => {
+                console.log(res.data);
                 if(res.data.status){
                     //login after register
                     const responseLogin = await api.post('api/login', { email, password });
@@ -95,7 +96,10 @@ export default function Register() {
                     if(error.response.data.message.career) setCareerError(error.response.data.message.career);
                     if(error.response.data.message.date) setBornError(error.response.data.message.date);
                     if(error.response.data.message.cpf) setCpfError(error.response.data.message.cpf);
-                    if(error.response.data.message.year) generalError = error.response.data.message.year;
+                    if(error.response.data.message.year) {
+                        setBornError(error.response.data.message.year);
+                        generalError = error.response.data.message.year;
+                    }
                 }
 
                 setIsHide(null);

@@ -50,8 +50,8 @@ export default function Register() {
                                 onChange={ e => setSearch(e.target.value) } />
                             
                             <label  className="text-white mb-3">Filtros por data de nascimento</label>
-                            <div className="row  pl-3">
-                                <select className="custom-select col-md-3 mr-3 col-12"
+                            <div className="row pl-3">
+                                <select className="custom-select col-md-12 col-12"
                                     value={day} 
                                     onChange={ e => setDay(e.target.value) }
                                 >
@@ -88,7 +88,7 @@ export default function Register() {
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select className="custom-select col-md-3 mr-3 col-12"
+                                <select className="custom-select col-md-12 col-12"
                                     value={month}
                                     onChange={ e => setMonth(e.target.value) }
                                     >
@@ -106,7 +106,7 @@ export default function Register() {
                                     <option value="11">Nov</option>
                                     <option value="12">Dez</option>
                                 </select>
-                                <input className="col-md-5 col-12" 
+                                <input className="col-md-12 col-12" 
                                     type="number" 
                                     placeholder="Informe o ano" 
                                     value={year} 
